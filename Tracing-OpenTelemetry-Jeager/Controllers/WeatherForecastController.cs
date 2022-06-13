@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace OpenTelemetry_Jeager.Controllers;
+namespace Tracing_OpenTelemetry_Jeager.Controllers;
 
 [ApiController]
 [Route("[controller]")]

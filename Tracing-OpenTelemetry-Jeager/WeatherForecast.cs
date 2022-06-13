@@ -1,4 +1,4 @@
-namespace OpenTelemetry_Jeager;
+namespace Tracing_OpenTelemetry_Jeager;
 
 public class WeatherForecast
 {

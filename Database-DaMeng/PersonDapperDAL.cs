@@ -1,4 +1,6 @@
 using System.Data;
+using Dapper;
+using Dm;
 
 public class DmConnectionFactory
 {
