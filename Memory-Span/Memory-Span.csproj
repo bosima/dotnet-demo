@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net472;netcoreapp3.1;net6.0</TargetFrameworks>
+    <RootNamespace>Memory_Span</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+    <PropertyGroup Condition="'$(TargetFramework)|$(Platform)'=='net472|AnyCPU'">
+    <DefineConstants>NET472</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="benchmarkdotnet" Version="0.13.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='net472'">
+    <PackageReference Include="Encoding.SpanExtensions" Version="1.0.0" />
+  </ItemGroup>
+</Project>
