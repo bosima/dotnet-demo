@@ -26,19 +26,16 @@ Task.Factory.StartNew(() =>
 {
     while (true)
     {
-        var wait = queue.Consume(message =>
-            {
-                Console.WriteLine(DateTime.Now.ToString("mmss.fff") + ":" + string.Join(",", message.Value));
-                return true;
-            }, 100);
-
-        if (wait > 0)
-        {
-            Thread.Sleep(TimeSpan.FromMilliseconds(wait));
-        }
-        else
+        var list = queue.Pull(100);
+        if (list.Count <= 0)
         {
             Thread.Sleep(100);
+            continue;
+        }
+
+        foreach (var item in list)
+        {
+            Console.WriteLine($"{DateTime.Now.ToString("mmss.fff")}:{item.key}, {string.Join(",", item.value)}");
         }
     }
 
